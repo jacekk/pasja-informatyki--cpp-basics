@@ -1,4 +1,3 @@
-// #include <conio.h> // @todo find linux equivalent
 #include <cstdlib>
 #include <iostream>
 #include <stdio.h>
@@ -8,6 +7,7 @@ using namespace std;
 void printMenu()
 {
 
+    cout << endl;
     cout << "MENU" << endl;
     cout << " 1. Add" << endl;
     cout << " 2. Subtract" << endl;
@@ -22,42 +22,46 @@ int main()
     float x, y;
     char action;
 
-    while (action != '5')
+    while (true)
     {
-
-        cout << "First number: ";
+        cout << "x: ";
         cin >> x;
-        cout << "Second number: ";
+        cout << "y: ";
         cin >> y;
-        cout << endl;
-        printMenu();
-        cout << "Pick an action: ";
-        action = getch();
 
-        cout << "==" << action << "==" << endl;
+        printMenu();
+
+        cout << "Pick an action: ";
+        cin >> action; // getch() from video does not work properly on linux
 
         switch (action)
         {
         case '1':
-            cout << "Sum: " << x + y;
+            cout << "x + y = " << x + y;
             break;
         case '2':
-            cout << "Subtraction: " << x - y;
+            cout << "x - y = " << x - y;
             break;
         case '3':
-            cout << "Multiplication: " << x * y;
+            cout << "x * y = " << x * y;
             break;
         case '4':
             if (y == 0)
-                cout << "Cannot divide by zero!!";
+                cout << "Cannot divide by zero :(";
             else
-                cout << "Division: " << x / y;
+                cout << "x / y = " << x / y;
             break;
+        case '5':
+            cout << "Bye :)" << endl << endl;
+            exit(0);
         default:
             cout << "Oops!!! Operation NOT in the MENU :(";
         }
 
         cin.get();
+        cout << endl;
+        cin.get();
+
         system("clear");
     }
 

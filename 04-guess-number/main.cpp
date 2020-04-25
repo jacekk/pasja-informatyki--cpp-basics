@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-     srand(time(NULL));
+    srand(time(NULL));
 
     int randomNumber = (rand() % 100) + 1;
     int guess;

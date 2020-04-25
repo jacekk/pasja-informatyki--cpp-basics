@@ -14,4 +14,4 @@ clean-codeblocks:
 	find . -type f -name "*.layout" | xargs rm -f
 
 clean-vscode:
-	find . -type f -name "*.out" | xargs rm
+	find . -type f -name "*.out" | xargs rm -f
